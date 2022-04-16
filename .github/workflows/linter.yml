@@ -15,4 +15,4 @@ jobs:
           cache: 'npm'
       - name: my-step
         run: make install
-        run: make lint
+             make lint
