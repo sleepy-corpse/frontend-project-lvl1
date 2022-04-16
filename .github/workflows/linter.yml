@@ -13,6 +13,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - name: my-step
+      - name: install
         run: make install
-             make lint
+      - name: lint
+        run: make lint
