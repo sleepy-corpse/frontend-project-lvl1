@@ -6,3 +6,5 @@
 [![asciicast](https://asciinema.org/a/uneM0QVHfLcs6aAM67nPghOms.svg)](https://asciinema.org/a/uneM0QVHfLcs6aAM67nPghOms)
 ### asciinema of the "Brain-Calc" game
 [![asciicast](https://asciinema.org/a/WnOkBlHkrgQOhXAfJmt4EL6Ya.svg)](https://asciinema.org/a/WnOkBlHkrgQOhXAfJmt4EL6Ya)
+### asciinema of the "Brain-GCD" game
+[![asciicast](https://asciinema.org/a/tbEMum9ur0KPObr8IWsiN8Xge.svg)](https://asciinema.org/a/tbEMum9ur0KPObr8IWsiN8Xge)
