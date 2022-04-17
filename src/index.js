@@ -15,6 +15,6 @@ export const getAnswer = (quest, corrAnswer, user) => {
     return true;
   }
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${corrAnswer}'.`);
-  console.log(`Let's try again, ${user}`);
+  console.log(`Let's try again, ${user}!`);
   return false;
 };
