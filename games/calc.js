@@ -1,4 +1,4 @@
-import getAnswer from '../src/index.js';
+import { getAnswer, countCorrectAnswers } from '../src/index.js';
 
 const calcGame = (userName) => {
   let correctCount = 0;
@@ -20,11 +20,8 @@ const calcGame = (userName) => {
         correctAnswer = String(num1 * num2);
     }
     const question = `${num1} ${operators[operatorId]} ${num2}`;
-    if (getAnswer(question, correctAnswer, userName)) {
-      correctCount += 1;
-    } else {
-      correctCount = 0;
-    }
+    const isCorrect = getAnswer(question, correctAnswer, userName);
+    correctCount += countCorrectAnswers(isCorrect, correctCount);
   }
   console.log(`Congratulations, ${userName}!`);
 };

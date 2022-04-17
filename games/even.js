@@ -1,4 +1,4 @@
-import getAnswer from '../src/index.js';
+import { countCorrectAnswers, getAnswer } from '../src/index.js';
 
 const isEvenGame = (userName) => {
   let correctCount = 0;
@@ -6,11 +6,8 @@ const isEvenGame = (userName) => {
   while (correctCount < 3) {
     const question = Math.floor(Math.random() * 20);
     const correctAnswer = (question % 2 === 0) ? 'yes' : 'no';
-    if (getAnswer(question, correctAnswer, userName)) {
-      correctCount += 1;
-    } else {
-      correctCount = 0;
-    }
+    const isCorrect = getAnswer(question, correctAnswer, userName);
+    correctCount += countCorrectAnswers(isCorrect, correctCount);
   }
   console.log(`Congratulations, ${userName}!`);
 };

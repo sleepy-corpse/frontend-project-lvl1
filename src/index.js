@@ -1,6 +1,13 @@
 import readlineSync from 'readline-sync';
 
-const getAnswer = (quest, corrAnswer, user) => {
+export const countCorrectAnswers = (answ, num) => {
+  if (answ) {
+    return 1;
+  }
+  return -num;
+};
+
+export const getAnswer = (quest, corrAnswer, user) => {
   console.log(`Question: ${quest}`);
   const answer = readlineSync.question('Your answer: ');
   if (answer === corrAnswer) {
@@ -11,4 +18,3 @@ const getAnswer = (quest, corrAnswer, user) => {
   console.log(`Let's try again, ${user}`);
   return false;
 };
-export default getAnswer;
