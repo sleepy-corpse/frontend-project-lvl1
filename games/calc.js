@@ -1,6 +1,8 @@
+import greeting from '../src/cli.js';
 import { getAnswer, countCorrectAnswers } from '../src/index.js';
 
-const calcGame = (userName) => {
+const calcGame = () => {
+  const userName = greeting();
   let correctCount = 0;
   let correctAnswer;
   const operators = ['+', '-', '*'];

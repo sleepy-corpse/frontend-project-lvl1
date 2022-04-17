@@ -1,6 +1,8 @@
+import greeting from '../src/cli.js';
 import { countCorrectAnswers, getAnswer } from '../src/index.js';
 
-const isEvenGame = (userName) => {
+const isEvenGame = () => {
+  const userName = greeting();
   let correctCount = 0;
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   while (correctCount < 3) {

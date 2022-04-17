@@ -1,3 +1,4 @@
+import greeting from '../src/cli.js';
 import { countCorrectAnswers, getAnswer } from '../src/index.js';
 
 const findGcd = (n1, n2) => {
@@ -11,7 +12,8 @@ const findGcd = (n1, n2) => {
   return gcd;
 };
 
-const gcdGame = (userName) => {
+const gcdGame = () => {
+  const userName = greeting();
   let correctCount = 0;
   console.log('Find the greatest common divisor of given numbers.');
   while (correctCount < 3) {
