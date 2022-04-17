@@ -1,4 +1,4 @@
-import getAnswer from './index.js';
+import getAnswer from '../src/index.js';
 
 const isEvenGame = (userName) => {
   let correctCount = 0;
