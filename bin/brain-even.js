@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { getName, isEvenGame } from '../src/even.js';
+import isEvenGame from '../src/even.js';
+import greeting from '../src/cli.js';
 
-isEvenGame(getName());
+isEvenGame(greeting());
