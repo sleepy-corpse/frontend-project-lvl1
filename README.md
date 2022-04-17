@@ -10,3 +10,5 @@
 [![asciicast](https://asciinema.org/a/tbEMum9ur0KPObr8IWsiN8Xge.svg)](https://asciinema.org/a/tbEMum9ur0KPObr8IWsiN8Xge)
 ### asciinema of the "Brain-Progression" game
 [![asciicast](https://asciinema.org/a/0MvejNZDIpM79xTwtwefMURhh.svg)](https://asciinema.org/a/0MvejNZDIpM79xTwtwefMURhh)
+### asciinema of the "Brain-Prime" game
+[![asciicast](https://asciinema.org/a/FMjrRNG4Hb1MfCGR0r1dmGELY.svg)](https://asciinema.org/a/FMjrRNG4Hb1MfCGR0r1dmGELY)
