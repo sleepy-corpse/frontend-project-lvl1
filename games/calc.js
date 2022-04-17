@@ -1,5 +1,5 @@
 import greeting from '../src/cli.js';
-import { getAnswer, countCorrectAnswers } from '../src/index.js';
+import { getAnswer } from '../src/index.js';
 
 const calcGame = () => {
   const userName = greeting();
@@ -22,9 +22,12 @@ const calcGame = () => {
         correctAnswer = String(num1 * num2);
     }
     const question = `${num1} ${operators[operatorId]} ${num2}`;
-    const isCorrect = getAnswer(question, correctAnswer, userName);
-    correctCount += countCorrectAnswers(isCorrect, correctCount);
+    if (!getAnswer(question, correctAnswer, userName)) {
+      return 0;
+    }
+    correctCount += 1;
   }
   console.log(`Congratulations, ${userName}!`);
+  return 0;
 };
 export default calcGame;

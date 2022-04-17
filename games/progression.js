@@ -1,5 +1,5 @@
 import greeting from '../src/cli.js';
-import { countCorrectAnswers, getAnswer } from '../src/index.js';
+import { getAnswer } from '../src/index.js';
 
 const progressionGame = () => {
   const userName = greeting();
@@ -16,9 +16,12 @@ const progressionGame = () => {
     const correctAnswer = String(arr[miss]);
     arr[miss] = '..';
     const question = arr.join(' ');
-    const isCorrect = getAnswer(question, correctAnswer, userName);
-    correctCount += countCorrectAnswers(isCorrect, correctCount);
+    if (!getAnswer(question, correctAnswer, userName)) {
+      return 0;
+    }
+    correctCount += 1;
   }
   console.log(`Congratulations, ${userName}!`);
+  return 0;
 };
 export default progressionGame;

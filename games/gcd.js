@@ -1,5 +1,5 @@
 import greeting from '../src/cli.js';
-import { countCorrectAnswers, getAnswer } from '../src/index.js';
+import { getAnswer } from '../src/index.js';
 
 const findGcd = (n1, n2) => {
   const min = Math.min(n1, n2);
@@ -21,9 +21,12 @@ const gcdGame = () => {
     const num2 = Math.floor(Math.random() * 50);
     const question = `${num1} ${num2}`;
     const correctAnswer = String(findGcd(num1, num2));
-    const isCorrect = getAnswer(question, correctAnswer, userName);
-    correctCount += countCorrectAnswers(isCorrect, correctCount);
+    if (!getAnswer(question, correctAnswer, userName)) {
+      return 0;
+    }
+    correctCount += 1;
   }
   console.log(`Congratulations, ${userName}!`);
+  return 0;
 };
 export default gcdGame;
