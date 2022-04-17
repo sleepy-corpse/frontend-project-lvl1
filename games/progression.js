@@ -9,7 +9,7 @@ const progressionGame = () => {
     const arr = [Math.floor(Math.random() * 40)];
     const step = Math.floor(Math.random() * 10) + 1;
     const progressionLength = Math.floor(Math.random() * 7) + 5;
-    const miss = Math.floor(Math.random() * progressionLength - 1);
+    const miss = Math.floor(Math.random() * (progressionLength - 1));
     for (let i = 1; i < progressionLength; i += 1) {
       arr.push(arr[i - 1] + step);
     }
