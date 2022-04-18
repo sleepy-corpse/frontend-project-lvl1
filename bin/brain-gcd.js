@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import gcdGame from '../games/gcd.js';
+import gcdGame from '../src/games/gcd.js';
 
-console.log('Welcome to the Brain Games!');
 gcdGame();

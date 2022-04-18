@@ -1,20 +1,27 @@
 import readlineSync from 'readline-sync';
 
-export const countCorrectAnswers = (answ, num) => {
-  if (answ) {
-    return 1;
-  }
-  return -num;
+export const greeting = () => {
+  console.log('Welcome to the Brain Games!');
+  console.log('May I have your name?');
+  const name1 = readlineSync.question('Your answer: ');
+  console.log(`Hello, ${name1}!`);
+  return name1;
 };
 
-export const getAnswer = (quest, corrAnswer, user) => {
-  console.log(`Question: ${quest}`);
-  const answer = readlineSync.question('Your answer: ');
-  if (answer === corrAnswer) {
-    console.log('Correct!');
-    return true;
+export const engine = (quest, corrAnswer, ask) => {
+  const userName = greeting();
+  console.log(ask);
+  for (let i = 0; i < 3; i += 1) {
+    console.log(`Question: ${quest[i]}`);
+    const answer = readlineSync.question('Your answer: ');
+    if (answer === corrAnswer[i]) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${corrAnswer[i]}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return 0;
+    }
   }
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${corrAnswer}'.`);
-  console.log(`Let's try again, ${user}!`);
-  return false;
+  console.log(`Congratulations, ${userName}!`);
+  return 0;
 };
