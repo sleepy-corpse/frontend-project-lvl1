@@ -8,16 +8,17 @@ export const greeting = () => {
   return name1;
 };
 
-export const engine = (quest, corrAnswer, ask) => {
+export const engine = (generateData, ask) => {
   const userName = greeting();
   console.log(ask);
   for (let i = 0; i < 3; i += 1) {
-    console.log(`Question: ${quest[i]}`);
+    const gameData = generateData();
+    console.log(`Question: ${gameData[0]}`);
     const answer = readlineSync.question('Your answer: ');
-    if (answer === corrAnswer[i]) {
+    if (answer === gameData[1]) {
       console.log('Correct!');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${corrAnswer[i]}'.`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${gameData[1]}'.`);
       console.log(`Let's try again, ${userName}!`);
       return 0;
     }

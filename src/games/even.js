@@ -1,15 +1,15 @@
 import { engine } from '../index.js';
 import randomInt from '../random.js';
 
+const generate = () => {
+  const question = randomInt(0, 20);
+  const correctAnswer = (question % 2 === 0) ? 'yes' : 'no';
+  return [question, correctAnswer];
+};
+
 const isEvenGame = () => {
-  const question = [];
-  const correctAnswer = [];
   const askThis = 'Answer "yes" if the number is even, otherwise answer "no".';
-  for (let i = 0; i < 3; i += 1) {
-    question[i] = randomInt(0, 20);
-    correctAnswer[i] = (question[i] % 2 === 0) ? 'yes' : 'no';
-  }
-  engine(question, correctAnswer, askThis);
+  engine(generate, askThis);
   return 0;
 };
 export default isEvenGame;

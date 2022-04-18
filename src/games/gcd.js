@@ -12,17 +12,17 @@ const findGcd = (n1, n2) => {
   return gcd;
 };
 
+const generate = () => {
+  const num1 = randomInt(0, 50);
+  const num2 = randomInt(0, 50);
+  const question = `${num1} ${num2}`;
+  const correctAnswer = String(findGcd(num1, num2));
+  return [question, correctAnswer];
+};
+
 const gcdGame = () => {
-  const question = [];
-  const correctAnswer = [];
   const askThis = 'Find the greatest common divisor of given numbers.';
-  for (let i = 0; i < 3; i += 1) {
-    const num1 = randomInt(0, 50);
-    const num2 = randomInt(0, 50);
-    question[i] = `${num1} ${num2}`;
-    correctAnswer[i] = String(findGcd(num1, num2));
-  }
-  engine(question, correctAnswer, askThis);
+  engine(generate, askThis);
   return 0;
 };
 export default gcdGame;

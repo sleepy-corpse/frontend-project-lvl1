@@ -13,15 +13,15 @@ const isPrime = (num) => {
   return true;
 };
 
+const generate = () => {
+  const question = randomInt(0, 20);
+  const correctAnswer = (isPrime(question)) ? 'yes' : 'no';
+  return [question, correctAnswer];
+};
+
 const isPrimeGame = () => {
-  const question = [];
-  const correctAnswer = [];
   const askThis = 'Answer "yes" if the number is prime, otherwise answer "no".';
-  for (let i = 0; i < 3; i += 1) {
-    question[i] = randomInt(0, 20);
-    correctAnswer[i] = (isPrime(question[i])) ? 'yes' : 'no';
-  }
-  engine(question, correctAnswer, askThis);
+  engine(generate, askThis);
   return 0;
 };
 export default isPrimeGame;
