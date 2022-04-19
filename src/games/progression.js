@@ -1,7 +1,7 @@
 import { engine } from '../index.js';
 import randomInt from '../random.js';
 
-const generate = () => {
+const generateData = () => {
   const arr = [randomInt(0, 40)];
   const step = randomInt(1, 11);
   const progressionLength = randomInt(5, 12);
@@ -15,9 +15,9 @@ const generate = () => {
   return [question, correctAnswer];
 };
 
+const description = 'What number is missing in the progression?';
+
 const progressionGame = () => {
-  const askThis = 'What number is missing in the progression?';
-  engine(generate, askThis);
-  return 0;
+  engine(generateData, description);
 };
 export default progressionGame;
