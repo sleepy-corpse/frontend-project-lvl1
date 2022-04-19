@@ -7,8 +7,10 @@ const calculate = (number1, number2, oper) => {
       return String(number1 + number2);
     case '-':
       return String(number1 - number2);
-    default:
+    case '*':
       return String(number1 * number2);
+    default:
+      return ' ERROR: the operator passed into calculate() function wasn\'t one of these: + - * ';
   }
 };
 

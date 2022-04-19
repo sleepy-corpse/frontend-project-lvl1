@@ -8,12 +8,12 @@ export const greeting = () => {
   return name1;
 };
 
-let roundsCount = 0;
+const roundsCount = 3;
 
 export const engine = (generateData, ask) => {
   const userName = greeting();
   console.log(ask);
-  while (roundsCount < 3) {
+  for (let i = 0; i < roundsCount; i += 1) {
     const [question, correctAnswer] = generateData();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
@@ -24,7 +24,6 @@ export const engine = (generateData, ask) => {
       console.log(`Let's try again, ${userName}!`);
       return;
     }
-    roundsCount += 1;
   }
   console.log(`Congratulations, ${userName}!`);
 };
