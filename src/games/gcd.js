@@ -1,11 +1,11 @@
 import { engine } from '../index.js';
 import randomInt from '../random.js';
 
-const findGcd = (n1, n2) => {
-  if (!n2) {
-    return n1;
+const findGcd = (number1, number2) => {
+  if (!number2) {
+    return number1;
   }
-  return findGcd(n2, n1 % n2);
+  return findGcd(number2, number1 % number2);
 };
 
 const generateData = () => {
